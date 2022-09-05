@@ -1,0 +1,19 @@
+(not too sure on the formatting but here is the raw code for my assignment)
+--A program to run GCD
+{-# OPTIONS_GHC -Wno-overlapping-patterns #-}
+
+egcd:: Int->Int->Int 
+a :: Integer
+a = 872
+b :: Integer
+b = 315
+egcd a b = a-b
+egcd a b =
+    if a>b
+        then egcd (a-b) b
+    else
+       egcd a (b-a)
+egcd a 0 = a
+ 
+First is the declaration of egcd where it has three type signatures Int->Int->Int; two for input and one for output
+The program then works by defining how it's base function is to subtract a and b but if a>b then it needs to subtract b from a before recursively calling itself. The same logic applies for if b>a (in that case a has to be subtracted from b) and finally the exit condition of when b is 0 a is the final result. 
